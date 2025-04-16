@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Personas Filtradas</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>¡Hola, mundo desde Loja, Ecuador!</h1>
+    <p><b> {{ fecha }}</b></p>
+
+    <h2>Personas con ID que comienza con 3, 4, 5 o 7:</h2>
+
+    {% if personas %}
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Correo</th>
+            </tr>
+            {% for persona in personas %}
+                <tr>
+                    <td>{{ persona.id }}</td>
+                    <td>{{ persona.nombre }}</td>
+                    <td>{{ persona.correo }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No se encontraron personas con IDs que comiencen con 3, 4, 5 o 7.</p>
+    {% endif %}
+</body>
+</html>
