@@ -27,7 +27,7 @@
 </head>
 <body>
     <h1>¡Hola, mundo desde Loja, Ecuador!</h1>
-    <p><b> {{ fecha }}</b></p>
+    <p><b>{{ fecha }}</b></p>
 
     <h2>Personas con ID que comienza con 3, 4, 5 o 7:</h2>
 
@@ -36,13 +36,17 @@
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
-                <th>Correo</th>
+                <th>Apellido</th>
+                <th>País</th>
+                <th>Dirección</th>
             </tr>
             {% for persona in personas %}
                 <tr>
                     <td>{{ persona.id }}</td>
                     <td>{{ persona.nombre }}</td>
-                    <td>{{ persona.correo }}</td>
+                    <td>{{ persona.apellido }}</td>
+                    <td>{{ persona.pais }}</td>
+                    <td>{{ persona.direccion }}</td>
                 </tr>
             {% endfor %}
         </table>
